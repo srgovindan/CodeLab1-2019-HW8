@@ -15,7 +15,7 @@ public class CameraDemo : MonoBehaviour
         // 1. get mouse input 
         float horizontalMouseSpeed = Input.GetAxis("Mouse X");
         float verticalMouseSpeed = Input.GetAxis("Mouse Y");
-        Debug.Log(horizontalMouseSpeed);
+        //Debug.Log(horizontalMouseSpeed);
 
         // 2. use mouse input to rotate camera
         // PITCH - x, YAW - y, ROLL - z 
