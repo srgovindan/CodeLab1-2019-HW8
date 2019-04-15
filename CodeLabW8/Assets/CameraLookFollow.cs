@@ -10,7 +10,7 @@ public class CameraLookFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //bug fix: if "look target" does not exists, then don't do anything 
+        //bugfix: if "look target" does not exists, then don't do anything 
         if(lookTarget==null) return; //"return" means skip the rest of this function and stop        
         
         //technique 1: use "LookAt"... very simple, very basic

@@ -28,4 +28,11 @@ public class RaycastButton : MonoBehaviour
             }
         }
     }
+    
+    
+    // secret faster way to make a raycast button
+    private void OnMouseDown()
+    {
+        Debug.Log("You clicked on me!");
+    }
 }
