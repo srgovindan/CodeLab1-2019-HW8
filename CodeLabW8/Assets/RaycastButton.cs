@@ -23,7 +23,9 @@ public class RaycastButton : MonoBehaviour
             if (Physics.Raycast(myRay, out myRayHitInfo, 1000f))
             {
                 // Step 5: do something with the raycast 
-                Destroy(myRayHitInfo.collider.gameObject);
+                //myRayHitInfo.transform.Translate(0f,1f,0f);
+                myRayHitInfo.transform.GetComponent<Renderer>().material.color = Color.Lerp(Color.cyan, Color.green, .5f);
+                //Destroy(myRayHitInfo.collider.gameObject);
                 Debug.Log("HIT");
             }
         }
