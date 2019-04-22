@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(myRay, out myRayCastHit, 1000f))
         {
             //do stuff with the raycast
-            
+            myRayCastHit.transform.GetComponent<Renderer>().material.color = Color.Lerp(Color.cyan, Color.green, .5f);
         }
 
     }
