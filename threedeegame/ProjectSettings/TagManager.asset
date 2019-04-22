@@ -7,6 +7,9 @@ TagManager:
   - Laundry
   - Washer
   - Dryer
+  - Coffee
+  - Sushi
+  - Inari
   layers:
   - Default
   - TransparentFX

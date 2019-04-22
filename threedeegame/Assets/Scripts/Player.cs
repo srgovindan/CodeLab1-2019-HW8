@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float moveSpeed;
     private Rigidbody rb;
@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move();
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Interact();
         }
@@ -43,7 +43,11 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(myRay, out myRayCastHit, 1000f))
         {
             //do stuff with the raycast
-            myRayCastHit.transform.GetComponent<Renderer>().material.color = Color.Lerp(Color.cyan, Color.green, .5f);
+            if (myRayCastHit.collider.gameObject.CompareTag("Laundry"))
+            {
+                Debug.Log("Got laundry.");
+                //do laundry things
+            }
         }
 
     }
