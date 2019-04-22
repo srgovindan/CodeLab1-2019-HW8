@@ -162,12 +162,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 699523441}
-  laundryCount: {fileID: 2010213776}
+  laundryCountUI: {fileID: 2010213776}
   laundryDialogue:
   - 
   - 
   - 
   - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  coffeeDialogue:
+  - 
+  - 
+  sushiDialogue:
+  - 
+  - 
+  inariDialogue:
+  - Praying to the gods won't help me with my laundry.
   - 
 --- !u!1 &89265251 stripped
 GameObject:
@@ -263,6 +277,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 670470151}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &185592482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: 07701acdf4dbc42bd9a3b01ef582d232,
+    type: 3}
+  m_PrefabInstance: {fileID: 647394816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &185592486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185592482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 320.00012, y: 361, z: 218.41019}
+  m_Center: {x: 0.00000018032824, y: -4.5, z: -6.050814}
 --- !u!1001 &250830103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,6 +306,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 1aa4766f6dea5425cb8cbe14888c39b2, type: 3}
       propertyPath: m_Name
       value: InariTorii
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1aa4766f6dea5425cb8cbe14888c39b2, type: 3}
+      propertyPath: m_TagString
+      value: Inari
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 1aa4766f6dea5425cb8cbe14888c39b2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -658,6 +695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dryer
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 07701acdf4dbc42bd9a3b01ef582d232, type: 3}
+      propertyPath: m_TagString
+      value: Dryer
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 07701acdf4dbc42bd9a3b01ef582d232, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.89
@@ -806,6 +847,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: 80dd8292740664f348c612c5991bc562, type: 3}
       propertyPath: m_Name
+      value: Sushi
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 80dd8292740664f348c612c5991bc562, type: 3}
+      propertyPath: m_TagString
       value: Sushi
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 80dd8292740664f348c612c5991bc562, type: 3}
@@ -1675,6 +1720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Washer
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 07701acdf4dbc42bd9a3b01ef582d232, type: 3}
+      propertyPath: m_TagString
+      value: Washer
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 07701acdf4dbc42bd9a3b01ef582d232, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.43
@@ -1733,6 +1782,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07701acdf4dbc42bd9a3b01ef582d232, type: 3}
+--- !u!1 &1879156993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: 07701acdf4dbc42bd9a3b01ef582d232,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845336669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1879156997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879156993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 320.00012, y: 361, z: 218.41019}
+  m_Center: {x: 0.00000018032824, y: -4.5, z: -6.050814}
 --- !u!1 &1994044690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,7 +1917,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994044690}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1927,7 +1995,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\tLaundry Remaining:"
+  m_Text: "\tLaundry Collected:"
 --- !u!222 &2010213777
 CanvasRenderer:
   m_ObjectHideFlags: 0

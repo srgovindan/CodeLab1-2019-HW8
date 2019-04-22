@@ -42,13 +42,40 @@ public class Player : MonoBehaviour
         //raycast!
         if (Physics.Raycast(myRay, out myRayCastHit, 1000f))
         {
-            //do stuff with the raycast
-            if (myRayCastHit.collider.gameObject.CompareTag("Laundry"))
+            //get tag of raycast hit obj
+            string objTag = myRayCastHit.collider.gameObject.tag;
+            
+            //do stuff with the raycast - calls the appropriate function from the laundry manager
+            if (objTag == "Laundry")
             {
                 Debug.Log("Got laundry.");
-                //do laundry things
+                LaundryManager.LM.GotLaundry(myRayCastHit.collider.gameObject);
+            } 
+            else if (objTag == "Washer")
+            {
+                Debug.Log("Got washer.");
+                LaundryManager.LM.GotWasher();
+            }
+            else if (objTag == "Dryer")
+            {
+                Debug.Log("Got dryer.");
+                LaundryManager.LM.GotDryer();
+            }
+            else if (objTag=="Coffee")
+            {
+                Debug.Log("Got coffee?");
+                LaundryManager.LM.UpdateDialogueUI(0);
+            }
+            else if (objTag=="Sushi")
+            {
+                Debug.Log("Got sushi!");
+                LaundryManager.LM.UpdateDialogueUI(1);
+            }
+            else if (objTag=="Inari")
+            {
+                Debug.Log("Got Inari?!");
+                LaundryManager.LM.UpdateDialogueUI(2);
             }
         }
-
     }
 }
