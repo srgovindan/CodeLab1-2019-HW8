@@ -11,6 +11,8 @@ public class LaundryManager : MonoBehaviour
     public Text dialogueBox;
     public Text laundryCountUI;
 
+    public bool laundryWashed;
+    public bool laundryDryed;
     private int laundryCounter;
     public string[] laundryDialogue;
     public string[] coffeeDialogue;
@@ -30,7 +32,9 @@ public class LaundryManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        //start laundry dialogue to 0
+        //start laundry as unwashed, not dry, dialogue to 0
+        laundryWashed = false;
+        laundryDryed = false;
         laundryCounter = 0;
         UpdateLaundryCountUI();
 
@@ -48,9 +52,9 @@ public class LaundryManager : MonoBehaviour
 
     public void UpdateDialogueUI(int objectType)
     {
-        if (objectType == 0)//Coffee
+        if (objectType == 0)//Game Over, laundry finished   
         {
-            dialogueBox.text = coffeeDialogue[Random.Range(0,coffeeDialogue.Length)];
+            dialogueBox.text = laundryDialogue[0];
         }
         else if (objectType == 1)//Sushi
         {
@@ -60,16 +64,12 @@ public class LaundryManager : MonoBehaviour
         {
             dialogueBox.text = inariDialogue[Random.Range(0,inariDialogue.Length)];
         }
-    }
-
-    public void GotWasher()
-    {
-        //TODO:check if all laundry collected
-    }
-
-    public void GotDryer()
-    {
-        //TODO: check if laundry washed 
+        else if(objectType == 3)//Coffee           
+        {
+            dialogueBox.text = coffeeDialogue[Random.Range(0,coffeeDialogue.Length)];
+        }
+                
+            
     }
     
     public void GotLaundry(GameObject laundry)
@@ -80,14 +80,47 @@ public class LaundryManager : MonoBehaviour
         UpdateDialogueUI();
         if (transform.childCount < 1)
         {
-            //game over
-            //TODO: dialogue should send you to the washer
+            laundryCounter++;
+            UpdateDialogueUI();
+            laundryWashed = true;
         }
     }
-
+    
+    public void GotWasher()
+    {
+        if (transform.childCount < 1)
+        {
+            laundryCounter++;
+            UpdateDialogueUI();
+            laundryWashed = true;
+        }
+        else
+        {
+            dialogueBox.text = "I need to grab all my clothes before starting the washer.";
+        }
+    }
+    public void GotDryer()
+    {
+        if (transform.childCount < 1 && laundryWashed)
+        {
+            laundryCounter++;
+            UpdateDialogueUI();
+            laundryDryed = true;
+            DoneWithLaundry();
+        }
+        else if(transform.childCount<1 && !laundryWashed)
+        {
+            dialogueBox.text = "I have to put all my clothes in the washer before drying them.";
+        }
+        else
+        {
+            dialogueBox.text = "I need to wash all my clothes before starting the dryer.";
+        }
+    }
+    
     void DoneWithLaundry()
     {
-        //TODO:do game over things here
+        UpdateDialogueUI(0);
         Debug.Log("Did the laundry");
     }
     

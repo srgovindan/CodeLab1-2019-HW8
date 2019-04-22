@@ -36,11 +36,11 @@ public class Player : MonoBehaviour
         //generate a ray
         Ray myRay = new Ray(transform.position, transform.forward);
         //debug draw the ray
-        Debug.DrawRay(myRay.origin,myRay.direction*1000f,Color.yellow);
+        Debug.DrawRay(myRay.origin, myRay.direction * 3f, Color.yellow);
         //init a raycasthit var
         RaycastHit myRayCastHit = new RaycastHit();
         //raycast!
-        if (Physics.Raycast(myRay, out myRayCastHit, 1000f))
+        if (Physics.Raycast(myRay, out myRayCastHit, 3f))
         {
             //get tag of raycast hit obj
             string objTag = myRayCastHit.collider.gameObject.tag;
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
             else if (objTag=="Coffee")
             {
                 Debug.Log("Got coffee?");
-                LaundryManager.LM.UpdateDialogueUI(0);
+                LaundryManager.LM.UpdateDialogueUI(3);
             }
             else if (objTag=="Sushi")
             {
