@@ -90,9 +90,8 @@ public class LaundryManager : MonoBehaviour
     {
         if (transform.childCount < 1)
         {
-            laundryCounter++;
-            UpdateDialogueUI();
             laundryWashed = true;
+            dialogueBox.text = "Now for the dryer.";
         }
         else
         {
@@ -103,8 +102,6 @@ public class LaundryManager : MonoBehaviour
     {
         if (transform.childCount < 1 && laundryWashed)
         {
-            laundryCounter++;
-            UpdateDialogueUI();
             laundryDryed = true;
             DoneWithLaundry();
         }
