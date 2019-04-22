@@ -35,7 +35,32 @@ ModelImporter:
     4300004: Dryer
     4300006: Glass1
     4300008: Powder_compartment
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BruttonMat
+    second: {fileID: 2100030, guid: 80dd8292740664f348c612c5991bc562, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorMat
+    second: {fileID: 2100020, guid: 80dd8292740664f348c612c5991bc562, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DryerMat
+    second: {fileID: 2100016, guid: 67c9e0bc70a1f4db1ab5effa40e232ac, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass1Mat
+    second: {fileID: 2100030, guid: 80dd8292740664f348c612c5991bc562, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Powder_compartmentMat
+    second: {fileID: 2100030, guid: 80dd8292740664f348c612c5991bc562, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

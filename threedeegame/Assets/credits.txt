@@ -1,2 +1,13 @@
-3D model assets obtained from Google Poly, created by Aimi Sekiguchi and used under CC-BY licence.
+3D model assets obtained from Google Poly.
+
+-Models created by Aimi Sekiguchi: Inari Torii, Japanese Room, Sushi set.
+-Models created by Poly by Google: Coffee cup, Washer/Dryer.
+
+Used under CC-BY licence.
 https://poly.google.com/user/c6UmSrlqUaJ
+https://poly.google.com/
+
+
+3D models obtained from TurboSquid.
+
+- 
